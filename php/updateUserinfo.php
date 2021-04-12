@@ -75,7 +75,7 @@
 
                     <!-- renglones bajos - 1 -->
                     <div class="ui equal width form">
-                            <div class="fields">
+                        <div class="fields">
                             <div class="field">
                                 <label>Mail</label>
                                 <input type="text" placeholder="Mail" name="mail">
@@ -83,11 +83,12 @@
                             <div class="field">
                                 <label>Nombre</label>
                                 <input type="text" placeholder="Nombre" name="nombre">
-                            </div>       
+                            </div>
+                        </div>       
                     </div>
                     <!-- renglones bajos 2 -->
                     <div class="ui equal width form">
-                            <div class="fields">
+                        <div class="fields">
                             <div class="field">
                                 <label>Rol</label>
                                 <input type="text" placeholder="Rol" name="rol">
@@ -95,7 +96,8 @@
                             <div class="field">
                                 <label>Telefono</label>
                                 <input type="text" placeholder="Telefono" name="telefono">
-                            </div>     
+                            </div> 
+                        </div>    
                     </div>
                     <!-- fin renglones bajos -->
 
