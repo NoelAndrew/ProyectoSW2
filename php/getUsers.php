@@ -40,7 +40,29 @@
     <div class="titulo_estas">
         <h1>Estas en getUsers</h1>
     </div>
+    <div class="contForm">
+        <div class="contForm2">
+            <div class="sigInContainer">
+                <center><h1>Obten los usuarios</h1></center><br>
+                <form name ="formularioGetUsers" action= "./php/.php" method="POST">
+                <!--textarea para mostrar el get-->
+                <center><textarea name="textarea" rows="10" cols="50"></textarea></center>
+                <br>
 
+                    <!-- Fin nuevo user y pass -->
+
+                    
+                    <!-- boton -->
+                    <div class="ui large buttons">
+                        <button class="ui blue button" name="GetUsersBtn" type="submit">GetUsers</button>
+                    </div>
+                    
+                    
+                    <!-- <a href="formulario.html">No tienes cuenta? Registrate</a> -->
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- footer -->
     <footer id="main-footer">
         <p>LOS CONDENADOS UH &copy; 2021, DERECHOS RESERVADOS</p>

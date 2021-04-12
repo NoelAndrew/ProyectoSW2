@@ -40,7 +40,56 @@
     <div class="titulo_estas">
         <h1>Estas en setUserinfo</h1>
     </div>
+         <!--Formulario-->
+     <div class="contForm">
+        <div class="contForm2">
+            <div class="sigInContainer">
+                <center><h1>Formulario</h1></center><br>
+                <form name ="formularioSetUser" action= "./php/.php" method="POST">
+                <!-- Renglon superior -->
+                        <div class="ui equal width form">
+                            <div class="fields">
+                            <div class="field">
+                                <label>User</label>
+                                <input type="text" placeholder="User" name="user">
+                            </div>
+                            <div class="field">
+                                <label>Pass</label>
+                                <input type="password" placeholder="Pass" name="pass">
+                            </div>                
+                        </div>
+                    <br>
+                    <!-- fin renglon superior -->
+                    
+                    <!-- renglon medio - largo -->
+                    <form class="ui form">
+                        <div class="field">
+                            <label>Searched User</label>
+                            <input type="text" placeholder="Searched User" name="searuser">
+                        </div>
+                    </form>
+                    <!-- fin renglon medio - largo -->
 
+                    <!-- renglones bajos - 1 -->
+                    <div class="ui equal width form">
+                        <div class="fields">
+                            <div class="field">
+                                <label>User Info JSON</label>
+                                <input type="text" placeholder="JSON" name="UIJson">
+                            </div>
+                        </div>       
+                    </div>
+                    <!-- fin renglon superior -->
+                    <div class="ui large buttons">
+                        <button class="ui blue button" name="boton" type="submit">Enviar</button>
+                    </div>
+                    
+                    
+                    <!-- <a href="formulario.html">No tienes cuenta? Registrate</a> -->
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- footer -->
     <footer id="main-footer">
         <p>LOS CONDENADOS UH &copy; 2021, DERECHOS RESERVADOS</p>
