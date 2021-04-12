@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #333;
+    font-family: 'Roboto', sans-serif;
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+}
+
+/* index */
+.portada{
+    min-height: 620px;
+    background: url(../img/fondo3.jpg);
+    text-align: center;
+    color: #333;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 1500px 800px;
+}
+.titulo_estas{
+    color: #ffffff;
+    text-align: center;
+}
+
+.contForm2{
+    min-height: 510px;
+}
+.sigInContainer {
+    background-color: #eee;
+    margin: 0 auto;
+    width: 700px;
+    padding: 20px;
+}
+
+ /*Footer*/
+ #main-footer {
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    background: #444444;
+    /* background: rgb(70, 117, 248); */
+    color: #ffffff;
+    padding: 20px;
+    width: 100%;
+}
