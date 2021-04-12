@@ -49,6 +49,7 @@
             <div class="sigInContainer">
                 <center><h1>Formulario</h1></center><br>
                 <form name ="formularioUsuario" action= "./php/.php" method="POST">
+                <!-- Renglon superior -->
                         <div class="ui equal width form">
                             <div class="fields">
                             <div class="field">
@@ -61,14 +62,18 @@
                             </div>                
                         </div>
                     <br>
-
+                    <!-- fin renglon superior -->
+                    
+                    <!-- renglon medio - largo -->
                     <form class="ui form">
                         <div class="field">
                             <label>Searched User</label>
                             <input type="text" placeholder="Searched User" name="searuser">
                         </div>
                     </form>
+                    <!-- fin renglon medio - largo -->
 
+                    <!-- renglones bajos - 1 -->
                     <div class="ui equal width form">
                             <div class="fields">
                             <div class="field">
@@ -80,7 +85,7 @@
                                 <input type="text" placeholder="Nombre" name="nombre">
                             </div>       
                     </div>
-
+                    <!-- renglones bajos 2 -->
                     <div class="ui equal width form">
                             <div class="fields">
                             <div class="field">
@@ -92,7 +97,9 @@
                                 <input type="text" placeholder="Telefono" name="telefono">
                             </div>     
                     </div>
+                    <!-- fin renglones bajos -->
 
+                    <!-- boton -->
                     <div class="ui large buttons">
                         <button class="ui blue button" name="boton" type="submit">Enviar</button>
                     </div>
