@@ -57,7 +57,7 @@ namespace Proyecto2.Controllers
                             resp = client.Get("usuarios_info/" + datos.User);
                             Usuario usuario = resp.ResultAs<Usuario>();
                             Usuario obj = usuario;
-                            if (obj.rol == "rh")
+                            if (obj.rol == "rh" && obj.rol != null)
                             {
                                 md5 = new MD5CryptoServiceProvider();
                                 md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(datos.Pass));

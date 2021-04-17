@@ -44,22 +44,13 @@
         <div class="contForm2">
             <div class="sigInContainer">
                 <center><h1>Obten los usuarios</h1></center><br>
-                <form name ="formularioGetUsers" action= "./php/.php" method="POST">
-                <!--textarea para mostrar el get-->
-                <center><textarea name="textarea" rows="10" cols="50"></textarea></center>
-                <br>
-
-                    <!-- Fin nuevo user y pass -->
-
-                    
-                    <!-- boton -->
+                <center>
+                <table id="table">
+                
+                 </table></center>
                     <div class="ui large buttons">
-                        <button class="ui blue button" name="GetUsersBtn" type="submit">GetUsers</button>
-                    </div>
-                    
-                    
-                    <!-- <a href="formulario.html">No tienes cuenta? Registrate</a> -->
-                </form>
+                        <button class="ui blue button" name="UserInfoBtn" type="submit" onclick="Get_data()">GetInfo</button>
+                 </div>
             </div>
         </div>
     </div>
@@ -68,4 +59,18 @@
         <p>LOS CONDENADOS UH &copy; 2021, DERECHOS RESERVADOS</p>
     </footer>
 </body>
+
+<script>
+function Get_data() {
+    jQuery.ajax({
+	url: "Clases/Get_user.php",
+	type: "GET",
+	success:function(data){
+		$("#table").html(data);
+	},
+	error:function (){}
+	});
+
+};
+</script>
 </html>

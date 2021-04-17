@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEMANTIC UI -->
     <link rel="stylesheet" href="../css/semantic.css">
-    <link rel="stylesheet" href="../js/jquery-3.5.1.min.js">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous"></script>
+    <script src= "../js/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="../css/semantic.min.css">
     <script src="../js/semantic.min.js"></script>
     <!-- FIn -->
@@ -44,21 +41,14 @@
         <div class="contForm2">
             <div class="sigInContainer">
                 <center><h1>Obtén información</h1></center><br>
-                <form name ="formularioGetInfo" action= "./php/.php" method="POST">
-                <!--textarea para mostrar el get-->
-                <center><textarea name="textarea" rows="10" cols="50"></textarea></center>
-                <br>
-
-                    <!-- Fin nuevo user y pass -->
-
-                    
-                    <!-- boton -->
+                <center>
+                <table id="table">
+                
+                 </table></center>
                     <div class="ui large buttons">
-                        <button class="ui blue button" name="UserInfoBtn" type="submit">GetInfo</button>
-                    </div>
+                        <button class="ui blue button" name="UserInfoBtn" type="submit" onclick="Get_data()">GetInfo</button>
+                 </div>
                     
-                    
-                </form>
             </div>
         </div>
     </div>
@@ -67,4 +57,17 @@
         <p>LOS CONDENADOS UH &copy; 2021, DERECHOS RESERVADOS</p>
     </footer>
 </body>
+<script>
+function Get_data() {
+    jQuery.ajax({
+	url: "Clases/Get_info.php",
+	type: "GET",
+	success:function(data){
+		$("#table").html(data);
+	},
+	error:function (){}
+	});
+
+};
+</script>
 </html>

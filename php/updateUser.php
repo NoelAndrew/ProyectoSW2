@@ -45,17 +45,16 @@
         <div class="contForm2">
             <div class="sigInContainer">
                 <center><h1>Formulario</h1></center><br>
-                <form name ="formularioUpdateUser" action= "./php/.php" method="POST">
                 <!-- Renglon superior -->
                         <div class="ui equal width form">
                             <div class="fields">
                             <div class="field">
                                 <label>User</label>
-                                <input type="text" placeholder="User" name="user">
+                                <input type="text" placeholder="User" name="user" id="user">
                             </div>
                             <div class="field">
                                 <label>Pass</label>
-                                <input type="password" placeholder="Pass" name="pass">
+                                <input type="password" placeholder="Pass" name="pass"id="pass">
                             </div>                
                         </div>
                     <br>
@@ -66,7 +65,7 @@
                             <div class="fields">
                             <div class="field">
                                 <label>Old User</label>
-                                <input type="text" placeholder="Old User" name="Olduser">
+                                <input type="text" placeholder="Old User" name="Olduser"id="Olduser">
                             </div>               
                         </div>
                     <br>
@@ -76,11 +75,11 @@
                             <div class="fields">
                             <div class="field">
                                 <label>Nuevo User</label>
-                                <input type="text" placeholder="Nuevo User" name="NewUser">
+                                <input type="text" placeholder="Nuevo User" name="NewUser"id="NewUser">
                             </div>
                             <div class="field">
                                 <label>Nueva Pass</label>
-                                <input type="password" placeholder="Nueva Pass" name="NewPass">
+                                <input type="password" placeholder="Nueva Pass" name="NewPass"id="NewPass">
                             </div>                
                         </div>
                     <br>
@@ -89,12 +88,8 @@
 
                     <!-- boton -->
                     <div class="ui large buttons">
-                        <button class="ui blue button" name="boton" type="submit">Enviar</button>
+                        <button class="ui blue button" name="boton" type="submit"onclick ="Update_user()">Enviar</button>
                     </div>
-                    
-                    
-                    <!-- <a href="formulario.html">No tienes cuenta? Registrate</a> -->
-                </form>
             </div>
         </div>
     </div>
@@ -103,4 +98,25 @@
         <p>LOS CONDENADOS UH &copy; 2021, DERECHOS RESERVADOS</p>
     </footer>
 </body>
+<script>
+   function Update_user(){
+	jQuery.ajax({
+	url: "Clases/update_user.php",
+	data: {user: $("#user").val(),
+        pass: $("#pass").val(),
+        NewUser: $("#NewUser").val(),
+        NewPass: $("#NewPass").val(),
+        Olduser: $("#Olduser").val(),
+        },
+            
+	type: "POST",
+	success:function(data){
+		alert(data);
+	},
+	error:function (){
+        alert("nepe");
+    }
+	});
+}
+    </Script>
 </html>
