@@ -45,48 +45,63 @@
         <div class="contForm2">
             <div class="sigInContainer">
                 <center><h1>Formulario</h1></center><br>
-                <form name ="formularioSetUser" action= "./php/.php" method="POST">
+                
                 <!-- Renglon superior -->
                         <div class="ui equal width form">
                             <div class="fields">
                             <div class="field">
                                 <label>User</label>
-                                <input type="text" placeholder="User" name="user">
+                                <input type="text" placeholder="User" name="user" id="user">
                             </div>
                             <div class="field">
                                 <label>Pass</label>
-                                <input type="password" placeholder="Pass" name="pass">
+                                <input type="password" placeholder="Pass" name="pass" id="pass">
                             </div>                
                         </div>
                     <br>
                     <!-- fin renglon superior -->
                     
                     <!-- renglon medio - largo -->
-                    <form class="ui form">
+                
                         <div class="field">
                             <label>Searched User</label>
-                            <input type="text" placeholder="Searched User" name="searuser">
+                            <input type="text" placeholder="Searched User" name="AuxUse" id="AuxUse">
                         </div>
-                    </form>
+                
                     <!-- fin renglon medio - largo -->
 
                     <!-- renglones bajos - 1 -->
                     <div class="ui equal width form">
-                        <div class="fields">
+                            <div class="fields">
                             <div class="field">
-                                <label>User Info JSON</label>
-                                <input type="text" placeholder="JSON" name="UIJson">
+                                <label>Correo</label>
+                                <input type="text" placeholder="correo" name="correo" id="correo">
                             </div>
-                        </div>       
-                    </div>
+                            <div class="field">
+                                <label>Nombre</label>
+                                <input type="text" placeholder="Nombre" name="nombre" id="nombre">
+                            </div>                
+                        </div>
+                        <div class="ui equal width form">
+                            <div class="fields">
+                            <div class="field">
+                                <label>Rol</label>
+                                <input type="text" placeholder="rol" name="rol" id="rol">
+                            </div>
+                            <div class="field">
+                                <label>Teléfono</label>
+                                <input type="text" placeholder="Teléfono" name="telefono" id="telefono">
+                            </div>                
+                        </div>
+                    <br>
                     <!-- fin renglon superior -->
                     <div class="ui large buttons">
-                        <button class="ui blue button" name="boton" type="submit">Enviar</button>
+                        <button class="ui blue button" name="boton" type="submit" onclick ="Set_userInfo()">Enviar</button>
                     </div>
                     
                     
                     <!-- <a href="formulario.html">No tienes cuenta? Registrate</a> -->
-                </form>
+            
             </div>
         </div>
     </div>
@@ -95,4 +110,28 @@
         <p>LOS CONDENADOS UH &copy; 2021, DERECHOS RESERVADOS</p>
     </footer>
 </body>
+<script>
+   function Set_Info() {
+	jQuery.ajax({
+	url: "Clases/set_userInfo.php",
+	data: {
+        user: $("#user").val(),
+        pass:$("#pass").val(),
+        correo: $("#correo").val(),
+        nombre: $("#nombre").val(),
+        rol: $("#rol").val(),
+        telefono: $("#telefono").val(),
+        AuxUse:$("#AuxUse").val(),
+        },
+            
+	type: "POST",
+	success:function(data){
+		alert(data);
+	},
+	error:function (){
+        alert("nepe");
+    }
+	});
+}
+    </Script>
 </html>
