@@ -97,9 +97,9 @@ class Conexion {
             }
         }
     }
-    function set_userInfo ($user,$pas,$correo,$nombre,$rol,$telefono, $searuser){
+    function set_Info ($user,$pas,$correo,$nombre,$rol,$telefono, $searuser){
         $ch =  curl_init();
-        curl_setopt($ch, CURLOPT_URL, $this->url."setuser");
+        curl_setopt($ch, CURLOPT_URL, $this->url."Setinfo");
         $arr = array('user' => $user, 'pass' => $pas, "JUser"=>array('correo' => $correo, 'nombre' =>$nombre,'rol' => $rol, 'telefono' =>$telefono), 'searuser'=>$searuser);
         $data =  json_encode($arr);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -114,20 +114,20 @@ class Conexion {
 
         $response = curl_exec($ch);
         $aux = json_decode($response,true);
-        $data = json_decode($aux,true);
+        //$data = json_decode($aux,true);
         if( curl_errno($ch) ) {
             echo 'Error: '.curl_errno($ch);
         } else {
-            foreach($data as $elemento =>$vaule){
+            foreach($aux as $elemento =>$vaule){
                if($elemento=="Code"  && $vaule == "402")
                {
-                foreach($data as $elemento2 =>$vaule2){
+                foreach($aux as $elemento2 =>$vaule2){
                     if($elemento2=="Data")
                     {
-                        echo "Usuario creado el: ". $vaule2 ;
+                        echo "Usuario actualizado el: ". $vaule2 ;
                     }
                 }
-               }elseif($elemento=="Message" && $vaule !== '"Usuario creado correctamente."'){
+               }elseif($elemento=="Message" && $vaule !== '"Usuario actualizado correctamente."'){
                 echo $vaule;
                }
             }
@@ -175,9 +175,9 @@ class Conexion {
     }
 
 
-    function update_userInfo ($user,$pas,$correo,$nombre,$rol,$telefono,$searuser){
+    function update_Info ($user,$pas,$correo,$nombre,$rol,$telefono,$searuser){
         $ch =  curl_init();
-        curl_setopt($ch, CURLOPT_URL, $this->url."Setinfo");
+        curl_setopt($ch, CURLOPT_URL, $this->url."UpdateInf");
 
         $arr = array('user' => $user, 'pass' => $pas, "JUser"=>array('correo' => $correo ,'nombre' => $nombre, 'rol' =>$rol,'telefono' => $telefono,),'searuser' => $searuser);
         $data =  json_encode($arr);

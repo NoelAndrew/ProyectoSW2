@@ -96,7 +96,7 @@
                     <br>
                     <!-- fin renglon superior -->
                     <div class="ui large buttons">
-                        <button class="ui blue button" name="boton" type="submit" onclick ="Set_userInfo()">Enviar</button>
+                        <button class="ui blue button" name="boton" type="submit" onclick ="Set_Info()">Enviar</button>
                     </div>
                     
                     
