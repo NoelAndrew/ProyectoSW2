@@ -114,14 +114,14 @@ class Conexion {
 
         $response = curl_exec($ch);
         $aux = json_decode($response,true);
-        //$data = json_decode($aux,true);
+        $data = json_decode($aux,true);
         if( curl_errno($ch) ) {
             echo 'Error: '.curl_errno($ch);
         } else {
-            foreach($aux as $elemento =>$vaule){
+            foreach($data as $elemento =>$vaule){
                if($elemento=="Code"  && $vaule == "402")
                {
-                foreach($aux as $elemento2 =>$vaule2){
+                foreach($data as $elemento2 =>$vaule2){
                     if($elemento2=="Data")
                     {
                         echo "Usuario actualizado el: ". $vaule2 ;
@@ -194,15 +194,15 @@ class Conexion {
 
         $response = curl_exec($ch);
         $aux = json_decode($response,true);
-        //$data = json_decode($aux,true);
+        $data = json_decode($aux,true);
 
         if( curl_errno($ch) ) {
             echo 'Error: '.curl_errno($ch);
         } else {
-            foreach($aux as $elemento =>$vaule){
+            foreach($data as $elemento =>$vaule){
                 if($elemento=="Code"  && $vaule == "403")
                 {
-                 foreach($aux as $elemento2 =>$vaule2){
+                 foreach($data as $elemento2 =>$vaule2){
                      if($elemento2=="Data")
                      {
                          echo "Usuario modificado el: ". $vaule2 ;
