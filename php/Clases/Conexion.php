@@ -100,7 +100,7 @@ class Conexion {
     function set_Info ($user,$pas,$correo,$nombre,$rol,$telefono, $searuser){
         $ch =  curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url."Setinfo");
-        $arr = array('user' => $user, 'pass' => $pas, "JUser"=>array('correo' => $correo, 'nombre' =>$nombre,'rol' => $rol, 'telefono' =>$telefono), 'searuser'=>$searuser);
+        $arr = array('user' => $user, 'pass' => $pas, "JUser"=>array('correo' => $correo, 'nombre' =>$nombre,'rol' => $rol, 'telefono' =>$telefono), 'Auxuse'=>$searuser);
         $data =  json_encode($arr);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
@@ -124,7 +124,7 @@ class Conexion {
                 foreach($data as $elemento2 =>$vaule2){
                     if($elemento2=="Data")
                     {
-                        echo "Usuario actualizado el: ". $vaule2 ;
+                        echo "Datos de suario insertados el: ". $vaule2 ;
                     }
                 }
                }elseif($elemento=="Message" && $vaule !== '"Usuario actualizado correctamente."'){
