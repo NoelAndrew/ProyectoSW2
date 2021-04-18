@@ -62,7 +62,6 @@
                     
                     <!--nueva horchata Old User-->
                     <div class="ui equal width form">
-                            <div class="fields">
                             <div class="field">
                                 <label>Old User</label>
                                 <input type="text" placeholder="Old User" name="Olduser"id="Olduser">

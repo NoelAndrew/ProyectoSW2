@@ -62,17 +62,18 @@
                     <!-- fin renglon superior -->
                     
                     <!-- renglon medio - largo -->
-                
+                    <div class="ui equal width form">
                         <div class="field">
                             <label>Searched User</label>
                             <input type="text" placeholder="Searched User" name="AuxUse" id="AuxUse">
                         </div>
-                
+                    </div>
+                    <br>
                     <!-- fin renglon medio - largo -->
 
                     <!-- renglones bajos - 1 -->
                     <div class="ui equal width form">
-                            <div class="fields">
+                        <div class="fields">
                             <div class="field">
                                 <label>Correo</label>
                                 <input type="text" placeholder="correo" name="correo" id="correo">
@@ -82,8 +83,10 @@
                                 <input type="text" placeholder="Nombre" name="nombre" id="nombre">
                             </div>                
                         </div>
-                        <div class="ui equal width form">
-                            <div class="fields">
+                    </div>
+
+                    <div class="ui equal width form">
+                        <div class="fields">
                             <div class="field">
                                 <label>Rol</label>
                                 <input type="text" placeholder="rol" name="rol" id="rol">
