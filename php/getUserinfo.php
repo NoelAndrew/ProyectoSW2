@@ -42,7 +42,7 @@
             <div class="sigInContainer">
                 <center><h1>Obtén información</h1></center><br>
                 <center>
-                <table id="table">
+                <table class="ui inverted teal selectable celled table" id="table">
                 
                  </table></center>
                     <div class="ui large buttons">

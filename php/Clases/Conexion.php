@@ -15,21 +15,22 @@ class Conexion {
         } else {
             $aux = json_decode($response,true);
             $data = json_decode($aux,true);
-            $resp="<tr>
+            $resp="<thead><tr>
             <th>Usuario</th>
             <th>Correo</th>
             <th>Nombre</th>
             <th>Rol</th>
             <th>Teléfono</th>
+            </thead>
             ";
 
             foreach($data as $elemento =>$vaule){
-                $resp .= "<tr><td>".$elemento."</td>";
+                $resp .= "<tbody><tr><td>".$elemento."</td>";
                 
                 foreach($vaule as $cosas){
                     $resp .="<td>". $cosas ."</td> ";  
                 }
-                $resp .= "</tr>";
+                $resp .= "</tr></tbody>";
             }
 
             echo $resp;
@@ -48,12 +49,13 @@ class Conexion {
         } else {
             $aux = json_decode($response,true);
             $data = json_decode($aux,true);
-            $resp="<tr>
+            $resp="<thead><tr>
             <th>Usuario</th>
+            <thead>
             ";
 
             foreach($data as $elemento =>$vaule){
-                $resp .= "<tr><td>".$elemento."</td> </tr>";
+                $resp .= "<tbody><tr><td>".$elemento."</td> </tr></tbody>";
             }
 
             echo $resp;
