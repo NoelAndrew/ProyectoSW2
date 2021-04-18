@@ -127,7 +127,7 @@ class Conexion {
                         echo "Datos de suario insertados el: ". $vaule2 ;
                     }
                 }
-               }elseif($elemento=="Message" && $vaule !== '"Usuario actualizado correctamente."'){
+               }elseif($elemento=="Message" && $vaule !== '"Datos de usuario registrados correctamente."'){
                 echo $vaule;
                }
             }
@@ -179,7 +179,7 @@ class Conexion {
         $ch =  curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url."UpdateInf");
 
-        $arr = array('user' => $user, 'pass' => $pas, "JUser"=>array('correo' => $correo ,'nombre' => $nombre, 'rol' =>$rol,'telefono' => $telefono,),'searuser' => $searuser);
+        $arr = array('user' => $user, 'pass' => $pas, "JUser"=>array('correo' => $correo ,'nombre' => $nombre, 'rol' =>$rol,'telefono' => $telefono,),'Auxuse' => $searuser);
         $data =  json_encode($arr);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
         curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
@@ -208,7 +208,7 @@ class Conexion {
                          echo "Usuario modificado el: ". $vaule2 ;
                      }
                  }
-                }elseif($elemento=="Message" && $vaule !== '"HORCHATA ACTUALIZADA."'){
+                }elseif($elemento=="Message" && $vaule !== '"Datos de usuario actualizados correctamente."'){
                  echo $vaule;
                 }
              }

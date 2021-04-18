@@ -11,6 +11,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace Proyecto2.Controllers
 {
@@ -72,6 +73,10 @@ namespace Proyecto2.Controllers
                                  resp = client.Get("usuarios/" + datos.Olduser);
                                 if (resp.Body != "null")
                                 {
+                                    resp = client.Get("usuarios_info/" + datos.Olduser);
+                                    Usuario usuarioaux = resp.ResultAs<Usuario>();
+                                    client.Delete("usuarios_info/" + datos.Olduser);
+                                    client.Set("usuarios_info/" + datos.Newuser + "/",usuarioaux);
                                     client.Delete("usuarios/" + datos.Olduser);
                                     client.Set("usuarios/" + datos.Newuser + "/", strBuilder.ToString());
                                     resp = client.Get("respuestas/401");
